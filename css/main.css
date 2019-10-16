@@ -1,0 +1,544 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: url(../imgs/bg.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.form-content input[type="user"], .form-content input[type="password"] {
+  outline: none;
+  font-size: .9em;
+  padding: 1em 3em 1em 1em;
+  border: none;
+  margin-bottom: 0.3em;
+  background: rgba(255, 255, 255, 0.85);
+  width: 80%;
+  color: #000;
+  border-radius: 30px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+}
+
+.form-content {
+  width: 26%;
+}
+
+.form-footer {
+  width: 26%;
+  margin: -1em auto 0.5em;
+}
+
+.input-container {
+  margin-left: -5em;
+  position: relative;
+}
+
+label {
+  font-size: 20px;
+  color: #24030b;
+}
+
+input {
+  margin-top: .9em;
+}
+
+span.icon1, span.icon2, span.icon3, span.icon4, span.icon5 {
+  color: #ea2858;
+  font-size: 1.1em;
+  position: absolute;
+  right: 6%;
+}
+
+span.icon1 {
+  top: 25%;
+}
+
+span.icon2 {
+  top: 75%;
+}
+
+span.icon3 {
+  top: 16%;
+}
+
+span.icon4 {
+  top: 48%;
+}
+
+span.icon5 {
+  top: 79%;
+}
+
+
+.message-error#login-error, .message-error#register-error {
+  margin-left: -120px;
+  padding-top: 3px;
+  color: white;
+}
+
+.message-error {
+  padding: 5px;
+  color: white;
+}
+
+.message-success {
+  padding: 5px;
+  color: #4CAF50;
+}
+
+/* Set a style for all buttons */
+
+button {
+  outline: none;
+  background: #ea2858;
+  color: white;
+  margin: 2em 10px 0px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 8%;
+  height: 2.5em;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+  border-radius: 30px;
+  font-size: 1em;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+}
+button:hover {
+  background: #fff;
+  color: black;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+}
+.btn-popup {
+  margin-right: 2em; 
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-play-now {
+  width: 15%;
+
+}
+button.btn-submit {
+  margin-top: 1em;
+  padding: .7em 0;
+  width: 280%;
+  height: 80%;
+}
+
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  position: relative;
+}
+
+img.avatar {
+  vertical-align: middle;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* The Modal (background) */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+
+.modal-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(#9796f0, #fbc7d4);
+  margin: 5% auto 15% auto;
+  border-radius: 19px;
+  width: 50%;
+  height: 50%;
+}
+
+.modal-content.register {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(#9796f0, #fbc7d4);
+  margin: 1% auto 15% auto;
+  border-radius: 19px;
+  width: 50%;
+  height: 65%;
+}
+
+/* The Close Button (x) */
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: -1.4em;
+  color: #ea2858;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0)
+  }
+  to {
+    -webkit-transform: scale(1)
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0)
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+
+/* CODING PAGE PICK level */
+.container-pick-level{
+  background-image: url(../imgs/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+}
+
+.wrapper-main-nav{
+  height: 100px;
+  background-color: #171414;
+  overflow: hidden;
+}
+
+.main-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+  
+}
+.home-page{
+width: 15%;
+text-align: left;
+}
+
+.user-name{
+  width: 25%;
+  /* margin-top: 40px; */
+  color: white;
+  font-family: 'Slabo 27px', serif;
+   font-size: larger;
+
+}
+
+.level-game{
+  width: 45%;
+  display: flex;
+  align-items: center;
+}
+.level-game-btn{
+  background-color: white;
+  color: black;
+  width: 30%;
+  justify-content: space-between;
+  margin-top: 0;
+ 
+}
+.level-game-btn:hover{
+  background-color: #ea2858;
+  color: white;
+}
+
+.log-out{
+  width: 15%;
+  text-align: right;
+}
+
+.home-page-btn{
+  margin-top: 0;
+  width: 100px;
+  height: 50px;
+  
+}
+
+.log-out-btn{
+  margin-top: 0px;
+  width: 100px;
+  height: 50px;
+}
+
+.wrapper-pick-level{
+  height: calc(100vh - 100px);
+}
+
+.wrapper-btn{
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper-btn>*{
+  margin-bottom: 50px;
+  
+}
+
+.level-btn:hover{
+  background-color: #ea2858;
+  color: white;
+}
+.pick-level-btn{
+  height: 200px;
+  width: 300px;
+  font-family: 'Slabo 27px', serif;
+  font-weight: 700;
+  background-color: #396763;
+}
+
+.pick-level-btn:hover{
+  height: 220px;
+  width: 330px;
+  font-size: 30px;
+  background-color: grey;
+}
+
+.title-level{
+  height: 20%;
+   text-align: center;
+  
+}
+
+.title-level span{
+ 
+  text-transform: uppercase;
+  display: block;
+  /* padding-top: 50px; */
+}
+
+.title1{
+  color: white;
+ font-size: 60px;
+ font-weight: 700;
+ letter-spacing: 20px;
+ padding: 50px 0 20px 0;
+ position: relative;
+ animation: text 2s 1;
+}
+
+.title2{
+  font-size: 25px;
+  color:#ea2858;
+  animation: text2 2s 1;
+}
+
+@keyframes text{
+  0%{
+    
+    
+  }
+  30%{
+    letter-spacing: 50px;
+   
+  }
+  80%{
+    letter-spacing: 20px;
+    
+  }
+}
+
+@keyframes text2{
+  0%{
+    margin-top: 100px;  
+  }
+  30%{
+     color: white;
+  }
+}
+
+/* coding playgame */
+
+.container-main-game{
+  background-image: url(../imgs/mainbackground.png);
+}
+.wrapper-main-game{
+  height: calc(100vh - 100px);
+}
+.main-game-left{
+  height: 100%;
+  display: flex;
+}
+
+.main-game-left-in{
+  top: 20px;
+
+}
+
+.image{
+  width: 350px;
+  height: 350px;
+  margin: 70px 0 0 150px;
+}
+
+.image img{
+  border-radius: 50px 20px;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+.answer{
+  border: 1px solid black;
+  width: 30px;
+  height: 25px;
+  text-align: center;
+
+}
+
+.input-answer{
+  margin-top:50px;
+  margin-left: 170px;
+}
+
+.left-left{
+  width: 50%;
+}
+
+.left-right{
+  width: 50%;
+}
+
+.wrapper-level-btn{
+  margin-top: 50px;
+  margin-right: 50px;
+}
+
+.level-btn{
+  width: 60px;
+  background-color: white;
+  color: #ee5253;
+  font-weight: bold;
+
+}
+
+.show-level{
+  width: 350px;
+  height: 100px;
+  color: white;
+  margin-left: 70px;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 70px;
+  font-family: 'Mansalva', cursive;
+
+}
+
+.next-btn{
+  margin-top: 90px;
+  margin-left: 500px;
+  
+}
+
+.next-btn button{
+  width: 70px;
+  background-color: white;
+  color:black;
+}
+
+.next-btn button:hover{
+  background-color: #ea2858;
+  color: white;
+}
+
+.wrong-answer{
+  animation: wrong 0.5s 1;
+}
+
+
+@keyframes wrong{
+  0% { color: red; transform: translate(1px, 1px) rotate(0deg); }
+  10% {color: red; transform: translate(-1px, -2px) rotate(-1deg); }
+  20% {color: red; transform: translate(-3px, 0px) rotate(1deg); }
+  30% {color: red; transform: translate(3px, 2px) rotate(0deg); }
+  40% {color: red; transform: translate(1px, -1px) rotate(1deg); }
+  50% {color: red; transform: translate(-1px, 2px) rotate(-1deg); }
+  60% {color: red; transform: translate(-3px, 1px) rotate(0deg); }
+  70% {color: red; transform: translate(3px, 1px) rotate(-1deg); }
+  80% { color: red; transform: translate(-1px, -1px) rotate(1deg); }
+  90% {color: red; transform: translate(1px, 2px) rotate(0deg); }
+  100% {color: red; transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.right-answer{
+  color: rgb(56, 250, 56);
+}
+
+.active{
+  background-color: #ea2858;
+  color: white;
+}
+
+
+
+
+
+
+
