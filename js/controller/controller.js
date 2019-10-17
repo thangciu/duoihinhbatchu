@@ -1,5 +1,5 @@
 const controller = {}
-
+let point = 0
 
 controller.initAuth = function () {
     firebase.auth().onAuthStateChanged(authStateChangedHandler)
@@ -69,6 +69,7 @@ controller.login = async function(loginInfo)
 
 
 controller.lvg = async function(lv){
+   
     let getData =  await firebase.firestore().collection('data').doc('data-ques').get()
     //   $('#lv1').click = getlv(1)
     $('#level-text').html('Level ' + lv)
@@ -92,21 +93,44 @@ controller.lvg = async function(lv){
 
          let ans = data.ans
     let str = ''
+   
+
+    
     $('#level-text').css('color','white')
 
     $('#wrong-icon').hide()
     $('#right-icon').hide()
 
     $(function() {   
+        
         $('.answer').keyup(function () {
             if (this.value.length == this.maxLength) {   
                 str += this.value
-                console.log(str)
               $(this).next('.answer').focus();
             }
+            console.log(str)
+            $('.answer').keyup(function(){     
+               if(this.value == ''){
+                $(this).attr('name', 'a')
+                // ind()
+                // function ind(){
+                    // let indx
+                    for(let i = 0; i < $('.answer').length; i++)
+                    {
+                        console.log($('.answer')[i].name)
+                        //  if( $('.answer')[i].value == 'a'){
+                        //     console.log(i)
+                        // }
+                    }
+                    // return indx
+                // }        
+               }
+              });
+
             
-            if(str.length == ans.length){
-            if(str != ans){
+            if(str.length == ans.length){ 
+              let result = str.toLowerCase()
+            if(result != ans){
                 $('#level').addClass('wrong-answer')
                 $('.answer:first-child').focus()
                 $('#wrong-icon').show()
@@ -134,9 +158,16 @@ controller.lvg = async function(lv){
                 for(let i = 0; i < $(('.answer')).length; i++){
                     $('.answer')[i].disabled = true
                 }
+                point += 10
+                console.log(point)
+                let poi = document.getElementById('point')
+                poi.innerHTML = `
+                <span> Diem: ${point}</span>
+                `
             }
         }
         })
     })
+
     
 }

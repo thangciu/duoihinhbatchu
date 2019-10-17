@@ -111,7 +111,7 @@ view.showComponents = function (name) {
                 firebase.auth().signOut()
             }
 
-          break;
+        //   break;
 
         }
         case 'play': {
@@ -120,12 +120,14 @@ view.showComponents = function (name) {
                 view.showComponents('picklevel')
 
             })
+            $('#point').html('<span>Diem: 0</span>')
             
             let logoutBtn = document.getElementById('log-out-btn')
             logoutBtn.onclick = signOut
 
 
-            let userName = document.getElementById('user-name')
+            let userName = document.getElementById('user-name')           
+            
             nameDisplay(userName, model.authUser)
 
             controller.lvg(1)

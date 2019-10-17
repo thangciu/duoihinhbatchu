@@ -281,12 +281,20 @@ text-align: left;
 }
 
 .user-name{
-  width: 25%;
+  overflow: hidden;
+  width: 15%;
   /* margin-top: 40px; */
   color: white;
   font-family: 'Slabo 27px', serif;
    font-size: larger;
 
+}
+.point{
+  margin-left: 20px;
+  width: 10%;
+  color: white;
+  font-family: 'Slabo 27px', serif;
+   font-size: larger;
 }
 
 .level-game{

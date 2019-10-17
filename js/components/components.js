@@ -74,7 +74,10 @@ components.nav = `
      <div class= "home-page">
          <button  id = "home-page-btn" class = "home-page-btn"> <i class="fa fa-home" aria-hidden="true"></i></button>
      </div> 
-     <div id = "user-name" class= "user-name">  </div>
+     <div id = "user-name" class= "user-name">  
+     </div>
+     <div id = "point" class = "point"></div>
+     
      <div class= "level-game">
          <button id = "level-de-active"class="level-game-btn">DỄ</button>
          <button id = "level-trung-binh-active"class="level-game-btn">TRUNG BÌNH</button>
