@@ -95,110 +95,55 @@ view.showComponents = function (name) {
 
 
         }
-        case 'picklevel': {
+        case 'game': {
+            app.innerHTML = components.nav + components.game
+            controller.loadRecord()
+            controller.game(1)
 
-            app.innerHTML = components.nav + components.picklevel
-            let logoutBtn = document.getElementById('log-out-btn')
-            logoutBtn.onclick = signOut
-            let userName = document.getElementById('user-name')
-
-            nameDisplay(userName, model.authUser)
-            $('#level-de').click(function () {
-                view.showComponents('play')
+            $('#mute-on').hide()
+           
+            let x =  document.getElementById("audio")
+            $('#mute-on').click(function(){
+               x.pause()
+               $('#mute-off').show()
+               $('#mute-on').hide()
+              
+            })
+            $('#mute-off').click(function(){
+                x.play()
+                $('#mute-off').hide()
+                $('#mute-on').show()
+               
             })
 
-            function signOut() {
-                firebase.auth().signOut()
-            }
-
-        //   break;
-
-        }
-        case 'play': {
-            app.innerHTML = components.nav + components.play
-            $('#home-page-btn').click(function () {
-                view.showComponents('picklevel')
-
-            })
-            $('#point').html('<span>Diem: 0</span>')
-            
-            let logoutBtn = document.getElementById('log-out-btn')
-            logoutBtn.onclick = signOut
 
 
-            let userName = document.getElementById('user-name')           
-            
-            nameDisplay(userName, model.authUser)
-
-            controller.lvg(1)
-            // su kien kich chon lever
-            $('#lv1').click = showLv(1)
-               $('#lv2').click = showLv(2)
-             $('#lv3').click = showLv(3)
-
-            // su kien next lever
-            let right = document.getElementById('next-btn')
-            let messages = ['#lv1', '#lv2', '#lv3']
-        
-            // ham tra ve ket qua tiep theo  trong mang message
-            function next(current, messages) {
-                var idx = messages.indexOf(current);
-                if (idx === messages.length - 1) {
-                  return messages[0];
-                }
-                return messages[idx + 1];
-              }
              
 
-              let idLv = '#lv1'
-              
-              right.addEventListener('click', () => {
-                controller.lvg(messages.indexOf(next(idLv,messages))+1)
-                idLv = next(idLv,messages)
-                for(let i = 0; i < $('.level-btn').length; i++){
-                    let a = document.getElementsByClassName('level-btn')
-                    a[i].classList.remove('active')
-                }
-                $(idLv).addClass('active')
-              })
+            $('#point').html('<span> Điểm: 0 <i class="far fa-sun"></i></span>')
 
-        //ham bat su kien khi click chon lever
-            function showLv(lv){
-            let idLv = '#lv' + lv
-            $(idLv).click(function () {
-                
-                $('#level-de-active').addClass('active')
-                for(let i =0; i < $('.level-btn').length; i++){
-                    let a = document.getElementsByClassName('level-btn')
-                    a[i].classList.remove('active')
-                }
-                $(idLv).addClass('active')
-                controller.lvg(lv)
-            })
-        }
-        
+            $('#user-name').html(`
+                <span> Chào: ${model.authUser.displayName}</span>
+            `)
 
-
-
-
-
-
-
-
-
-
-
-
-            function signOut() {
+            $('#log-out-btn').click(function () {
                 firebase.auth().signOut()
-            }
+            })
 
+            $('#save-btn').click(function () {
+                controller.savePoint()
+            })
+            
             break;
         }
-
-
+        case 'loading':{
+            app.innerHTML = components.loading
+        }
+       
     }
 }
+
+
 
 view.setText = function (id, text) {
     $("#" + id).text(text)
@@ -223,15 +168,4 @@ function allPassed(validateResult) {
     return true
 }
 
-function nameDisplay(nameHTML, user) {
-    if (user) {
-        nameHTML.innerHTML = `
-        <span> Hello: ${user.displayName}</span>
-        `
-    } else {
-        nameHTML.innerHTML = `
-        <span> Hello: Guest</span>
-        `
-    }
-}
 

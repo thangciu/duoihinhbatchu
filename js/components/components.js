@@ -16,7 +16,7 @@ components.welcome = `
                 <span onclick="document.getElementById('login-popup').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <div class="input-container">
                     <label for="username"><b>Username</b></label>
-                    <input placeholder="Tên người dùng" name="user" class="user" type="user">
+                    <input placeholder="Tên người dùng" name="user" autocomplete="off" class="user" type="user">
                     <div id="user-error" class="message-error"> </div>
                     <span class="icon1"><i class="fa fa-user" aria-hidden="true"></i></span>
 
@@ -42,12 +42,12 @@ components.welcome = `
                 <span onclick="document.getElementById('register-popup').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <div class="input-container">
                     <label for="username"><b>Username</b></label>
-                    <input placeholder="Tên người dùng" name="user" class="user" type="user">
+                    <input placeholder="Tên người dùng" name="user" autocomplete="off" class="user" type="user">
                     <div id="user-error" class="message-error"> </div>
                     <span class="icon3"><i class="fa fa-user" aria-hidden="true"></i></span>
     
                     <label for="display"><b>DisplayName</b></label>
-                    <input placeholder="Tên hiển thị" name="displayName"" class="displayname" type="user">
+                    <input placeholder="Tên hiển thị" name="displayName" autocomplete="off" class="displayname" type="user">
                     <div id="display-name-error" class="message-error"> </div>
                     <span class="icon4"><i class="far fa-eye" aria-hidden="true"></i></i></span>
 
@@ -68,21 +68,21 @@ components.welcome = `
 `
 
 components.nav = `
+<audio id="audio" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <nav class="wrapper-main-nav">
     <div class="main-nav">
-     <div class= "home-page">
-         <button  id = "home-page-btn" class = "home-page-btn"> <i class="fa fa-home" aria-hidden="true"></i></button>
-     </div> 
      <div id = "user-name" class= "user-name">  
      </div>
-     <div id = "point" class = "point"></div>
      
-     <div class= "level-game">
-         <button id = "level-de-active"class="level-game-btn">DỄ</button>
-         <button id = "level-trung-binh-active"class="level-game-btn">TRUNG BÌNH</button>
-         <button id = "level-kho-active" class="level-game-btn">KHÓ</button>
-     </div>
+     <div id = "level" class="show-level">
+        <span id = "level-text" class='level-text'></span>
+    </div>
+    <div id = "point" class = "point"></div>
+    <button id = "mute-off"><i class="fas fa-volume-mute"></i></button>
+    <button id = "mute-on"><i class="fas fa-volume-up"></i></button>
      <div class="log-out">
          <button id = "log-out-btn" class="log-out-btn"><i class="fas fa-sign-out-alt"></i></i>
          </button>
@@ -91,27 +91,25 @@ components.nav = `
            
     </nav>
 `
-components.picklevel = `
 
-<section class = "container-pick-level">
-  <div class="wrapper-pick-level">
-         
-       <div class = "title-level">
-       <span class = "title1">welcome</span>
-       <span class = "title2">please choose level</span>
-           </div>
-     
-      <div class = "wrapper-btn">
-        <button id = "level-de" class="pick-level-btn" >DỄ</button>
-        <button id = "level-trung-binh" class="pick-level-btn" >TRUNG BÌNH</button>
-        <button id ="level-kho" class= "pick-level-btn" >KHÓ</button>
-        <hr>
+components.game = `
+<section class="container-main-game">
+    <div class="main-game-left">
+        <div class="image">
+            <img id = "img-data" src="" alt="">
+            <div id = "input-answer" class="input-answer"></div>
+        </div>
+        <button id = 'save-btn' class='save-btn'>Lưu điểm</button>
+    </div>
 
-      </div>
-     
-  </div>
-
-
+    <div class="rank-record">
+        <div id="bxh-content" class="bxh-content">
+            <div class="bxh-icon"><i class="fas fa-crown"></i></div>
+            <div class="wrapper-champion">
+                <div id="name-container" class='name-container'></div>
+            </div>
+        </div>
+    </div>
 </section>
 `
 
@@ -119,42 +117,4 @@ components.loading = `
  <div class = "loading-container">
  <img src = "./imgs/loading.gif" />
   </div>
-`
-
-components.play =`
-<section class="container-main-game">
-<div class="wrapper-main-game">
-    <div class="main-game-left">
-        <div class="left-left">
-            <div class="main-game-left-in">
-                <div class="image">
-                    <img id = "img-data" src="" alt="">
-                </div>
-                <div class="input-answer">
-                    
-
-                </div>
-            </div>
-        </div>
-        <div class="left-right">
-            <div id = "level-btn" btn" class="wrapper-level-btn">
-                <button id = "lv1"  class="level-btn">1</button>
-                <button id = "lv2"  class="level-btn">2</button>
-                <button id = "lv3"  class="level-btn">3</button>
-            </div>
-            <div id = "level" class="show-level">
-                <i id ="right-icon" class="fas fa-check"></i>
-                <i id = "wrong-icon" class="fas fa-times"></i>
-                <span id = "level-text"> LEVEL 1</span>
-            </div>
-            <div id = "next-btn" class="next-btn">
-                <button>NEXT</button>
-
-            </div>
-        </div>
-    </div>
-
-</div>
-
-</section>
 `
